@@ -1,7 +1,7 @@
 let audioPlayerObj = {}
 audioPlayerObj.$container = document.querySelector('.audioPlayer')
 audioPlayerObj.$audio = document.createElement('audio')
-audioPlayerObj.$audio.setAttribute('src','https://www.thomaslacroix.fr/sounds/song1.mp3')
+audioPlayerObj.$audio.setAttribute('src','https://music-player.netlify.com/song1.mp3')
 audioPlayerObj.$audio.classList.add('song1')
 audioPlayerObj.$audio.crossOrigin = 'anonymous'
 audioPlayerObj.$container.appendChild(audioPlayerObj.$audio)

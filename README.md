@@ -7,4 +7,4 @@
 - Background is some palm tree moving that give us an impression of being on the road
 - The spectrum of the sound appears when song is playing
 - Song can be muted and is in localhost
-- Songs and json are hosted online (songs on thomaslacroix.fr and json on git)
+- Songs and json are hosted online
