@@ -1,4 +1,4 @@
-# Miami Audio Hotline (name in reference to Hotline Miami (the video game) )
+# Miami Audio Hotline
 
 ### Features
 
