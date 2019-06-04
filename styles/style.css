@@ -1,0 +1,313 @@
+body{
+    margin: 0 auto;
+    overflow: hidden;
+    user-select: none;
+}
+/**
+* MOVING BACKGROUND
+*/
+.layer{
+    background-color: black;
+    opacity: 0.69;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.background0{
+    position: absolute;
+    background-color:black;
+    background-position: 50%;
+    background-size: 290vh;
+    transform: translate(0%,0%);
+    background-image: url('../images/background.jpg');
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    animation: bgMoving0 20s linear infinite normal forwards;
+    animation-play-state: running;
+    will-change: transform;
+}
+@keyframes bgMoving0{
+    0%      {transform: translate(0%,0%)}
+    50%     {transform: translate(-50%,0%)}
+    100%    {transform: translate(-100%,0%)}
+}
+.background1{
+    position: absolute;
+    background-color:black;
+    background-position: 50%;
+    background-size: 290vh;
+    transform: translate(100%,0%);
+    background-image: url('../images/background.jpg');
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    animation: bgMoving1 20s linear infinite normal forwards;
+    animation-play-state: running;
+    will-change: transform;
+}
+@keyframes bgMoving1{
+    0%      {transform: translate(100%,0%)}
+    50%     {transform: translate(50%,0%)}
+    100%    {transform: translate(0%,0%)}
+}
+/**
+* TITLE
+*/
+.container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.title{
+    margin: 0;
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    width: 74%;
+    height: 8%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    color: #1ABFC4;
+}
+.title::after{
+    content: "Miami Audio Hotline";
+    color: #D40E7A;
+    position: absolute;
+    top: 0%;
+    left: 0.5%;
+}
+/**
+* SONG INFOS
+*/
+.infoSong{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5% 0 0.5% 0;
+    top: 3%;
+    right: 3%;
+    border-radius: 10px;
+    width: 24.4%;
+    height: 14%;
+    background: white;
+}
+.infoSong::after{
+    content: "";
+    position: absolute;
+    left: 2%;
+    top: 6%;
+    width: 100%;
+    height: 100%;
+    background: #1ABFC4;
+    border-radius: 10px;
+    z-index: -1;
+}
+.infoSong .cover{  
+    border-radius: 10px; 
+    height: 97%;
+    width: 38%; 
+}
+.infoSong .column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 49%;
+}
+.infoSong p{
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+/**
+* VOLUME IN SONG INFOS
+*/
+.infoSong .soundBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.infoSong .soundBar img{
+    width: 12%;
+}
+.infoSong .soundBar .soundVolume{
+    position: relative;
+    height: 10px;
+    width: 56%;
+    background: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    left: -27%;
+    top: 1px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.soundVolume .soundIn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #b554e6;
+    transform-origin: 0 0;
+    transition: 0.04s ease-out;
+    will-change: transform;
+}
+/**
+* PLAYER AND MAINS BUTTONS
+*/
+.audioPlayer{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    width: 495px;
+    height: 250px;
+    background: #D40E7A;
+    z-index: 1;
+}
+.audioPlayer::after{
+    content: "";
+    position: absolute;
+    right: 3%;
+    bottom: 5%;
+    background: #1ABFC4;
+    border-radius: 20px;
+    width: 99%;
+    height: 99%;
+}
+.audioPlayer .flexButtons{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    left: -7px;
+    top: -7px;
+    width: 98%;
+    height: 79%;
+}
+.audioPlayer .flexButtons .playPause{
+    outline:0;
+    background: white;
+    border-radius: 50%;
+    width: 35%;
+    height: 88%;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    border: 0px;
+}
+/**
+* ANIMATION WHEN PLAY
+*/
+.playing{
+    animation: playing 0.35s ease-out 1 normal forwards;
+}
+@keyframes playing{
+    0%      {transform: scale(1)}
+    50%     {transform: scale(1.4)}
+    100%    {transform: scale(1)}
+}
+.nextTrack, .lastTrack{
+    outline:0;
+    border: 0px;
+    background: white;
+    border-radius: 50%;
+    width: 24%;
+    height: 63%;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+}
+.audioPlayer img{
+    height: 45%;
+    width: 45%;
+}
+/**
+* SEEK BAR
+*/
+.seek{
+    position: relative;
+    width: 91.6%;
+    height: 6%;
+    top: 81%;
+    left: 1%;
+    border-radius: 10px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+}
+.seek .fill{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background: #b554e6;
+    transform-origin: 0 0;
+    transition: 0.04s ease-out;
+    will-change: transform;
+    transform: scaleX(0);
+}
+/**
+* ANTENNA BEHIND AUDIO PLAYER
+*/
+.antenna{
+    position: absolute;
+    height: 16%;
+    width: 0.5%;
+    border-radius: 10px;
+    background: white;
+    left: 56.5%;
+    top: 24%;
+    transform: rotate(-30deg);
+    z-index: 0;
+}
+.antenna::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background: grey;
+    right: 49%;
+    bottom: 1%;
+}
+.secondAntenna{
+    position: absolute;
+    height: 16%;
+    width: 0.5%;
+    border-radius: 10px;
+    background: white;
+    left: 60%;
+    top: 24%;
+    transform: rotate(30deg);
+    z-index: 0;
+}
+.secondAntenna::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background: grey;
+    right: 49%;
+}
+/**
+* CANVAS
+*/
+body canvas{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Audio Player</title>
+</head>
+<body>
+  <div class="layer"></div>
+  <div class="background0"></div>
+  <canvas></canvas>
+  <div class="background1"></div>
+  <div class="container">
+    <div class="infoSong">
+      <img class="cover" src="images/cover1.jpg" alt="cover song">
+      <div class="column">
+        <p>Moon - Quixotic</p>
+        <div class="soundBar">
+          <img src="images/sound.png" alt="sound volume">
+          <div class="soundVolume">
+            <div class="soundIn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="title">Miami Audio Hotline</p>
+    <div class="audioPlayer">
+      <div class="flexButtons">
+        <button class="lastTrack">
+          <img src="images/back.png" alt="last track">
+        </button>
+        <button class="playPause">
+          <img class="playingImg" src="images/play-button.png" alt="play button">
+        </button>
+        <button class="nextTrack">
+            <img src="images/next.png" alt="next track">
+        </button>
+      </div>
+      <div class="seek">
+        <div class="fill"></div>
+      </div>
+    </div>
+    <div class="antenna"></div>
+    <div class="secondAntenna"></div>
+  </div>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
